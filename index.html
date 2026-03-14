@@ -191,9 +191,23 @@ particlesJS("particles-js", {
     gtag('config', 'UA-111463289-1');
     </script>
 <div style="text-align:center; margin: 30px 0 40px;">
-  <h1 style="font-size: 28px; font-weight: 700; color:#222;">👨‍💻 程序员资源站</h1>
-  <p style="color:#666; margin-top:8px;">编程工具 | 学习资源 | 毕业设计 | 实用干货</p>
+  <h1 id="title" style="font-size: 28px; font-weight: 700; color:#fff;"></h1>
+  <p style="color:#aaa; margin-top:8px;">编程工具 | 学习资源 | 毕业设计 | 实用干货</p>
 </div>
+
+<script>
+const text = "👨‍💻 程序员资源站";
+let i = 0;
+function type() {
+  if (i < text.length) {
+    document.getElementById("title").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 150);
+  }
+}
+window.onload = type;
+</script>
+
 
     <!-- ************************ -->
     <!-- 程序员资源站 - 导航主体 -->
