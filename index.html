@@ -26,10 +26,15 @@
   box-sizing: border-box;
 }
 body {
-  background: #12141d;
-    color:eee;
+  background: #0f111a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   padding: 20px;
+  color: #eee;
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .container {
   max-width: 1200px;
@@ -39,15 +44,31 @@ body {
   gap: 20px;
 }
 .nav-item {
-  background: #1c1f2e;
+  background: #1a1d2b;
   border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: 0.3s;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transition: left 0.6s ease;
+}
+.nav-item:hover::before {
+  left: 100%;
 }
 .nav-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0,113,227,0.15);
+  border-color: #0071e3;
 }
 .nav-title {
   font-size: 16px;
@@ -66,22 +87,31 @@ body {
 }
 .link-list a {
   display: block;
-  color: #eee;
+  color: #e0e0e0;
   text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 8px;
-  transition: 0.2s;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
 }
 .link-list a:hover {
-  background: #eef6ff;
-  color: #0071e3;
+  background: #0071e3;
+  color: #fff;
+  transform: translateX(4px);
 }
 .link-list p {
   font-size: 12px;
-  color: #999;
+  color: #888;
   margin-top: 2px;
 }
+h1 {
+  animation: titleSlide 1s 0.2s ease backwards;
+}
+@keyframes titleSlide {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 </style>
+
 
     <!-- 修正后的标题 -->
     <title>程序员资源站 - 高效工具与学习资源导航</title>
